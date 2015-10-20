@@ -1,15 +1,7 @@
-//
-//  BTManager.m
-//  BTReactNative
-//
-//  Created by Alan Wong on 25/9/15.
-//  Copyright © 2015 Facebook. All rights reserved.
-//
-
-#import "BTManager.h"
+#import "RNBraintree.h"
 #import "RCTUtils.h"
 
-@implementation BTManager
+@implementation RNBraintree
 
 RCT_EXPORT_MODULE();
 
