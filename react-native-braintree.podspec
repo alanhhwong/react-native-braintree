@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Alan Wong" => "alawong@paypal.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/react-native-braintree.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/alawong/react-native-braintree.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'
@@ -37,4 +37,5 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'Braintree'
+  s.dependency 'React'
 end
