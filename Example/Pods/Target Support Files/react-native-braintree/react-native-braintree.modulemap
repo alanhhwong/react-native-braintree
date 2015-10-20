@@ -1,0 +1,6 @@
+framework module react_native_braintree {
+  umbrella header "react-native-braintree-umbrella.h"
+
+  export *
+  module * { export * }
+}

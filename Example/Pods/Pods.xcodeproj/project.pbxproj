@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10DAEFC61A7F81B1D5CE477BF0459F61 /* Pods-react-native-braintree_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18429F8E3C6BAC5675930CBB2363E83B /* Pods-react-native-braintree_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11E606B41BD620DA00D4177F /* BTManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 11E606B21BD620DA00D4177F /* BTManager.h */; settings = {ASSET_TAGS = (); }; };
+		11E606B51BD620DA00D4177F /* BTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E606B31BD620DA00D4177F /* BTManager.m */; settings = {ASSET_TAGS = (); }; };
+		1C8B5932FFDBB9F7C6AFBE9DD6EAF119 /* react-native-braintree-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 84317A50CAEFDDD0C2275F7FA0A31B66 /* react-native-braintree-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84E46F41BF78474DA2F14F3CE647AAF3 /* react-native-braintree.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AF7470C26A105F2240A0917E5FEB0D7B /* react-native-braintree.bundle */; };
+		A3368E7BE49ACF70BA580C5295548375 /* react-native-braintree-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1A784AE6947549E2D2E7FD8CEDB74A /* react-native-braintree-dummy.m */; };
+		A5C37E262CBA99D86BAF3CF799C2CC2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711672C64EF305469DF3D11154BB79E5 /* Foundation.framework */; };
+		C0590FE4AB8C4B4F5061C70C5B26CBA6 /* Pods-react-native-braintree_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB78B56D5B7D017D024A25B63467FE /* Pods-react-native-braintree_Tests-dummy.m */; };
+		FF76E29A1EA34A936565778C0791E554 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711672C64EF305469DF3D11154BB79E5 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		136FC9D920BF6C91E3F90D39AAE6B8C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 843524D20DA8640B8AE7D14EBAD72664;
+			remoteInfo = "react-native-braintree";
+		};
+		9B429B0F2E0B39EA0B6E05484295C04D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AB6F5B2A3DBA45ADB66F292DDB18ADB;
+			remoteInfo = "react-native-braintree-react-native-braintree";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D79861769A2A640A7F2807823320004 /* Pods-react-native-braintree_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-react-native-braintree_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		11E606B21BD620DA00D4177F /* BTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTManager.h; sourceTree = "<group>"; };
+		11E606B31BD620DA00D4177F /* BTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTManager.m; sourceTree = "<group>"; };
+		18429F8E3C6BAC5675930CBB2363E83B /* Pods-react-native-braintree_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-react-native-braintree_Tests-umbrella.h"; sourceTree = "<group>"; };
+		1FB850C69B314C157D5443598F1387F6 /* react-native-braintree.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "react-native-braintree.xcconfig"; sourceTree = "<group>"; };
+		2196380717DB549AAB1DF686531D70EC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27347C18406DF8303A6A709192EDDA9C /* react_native_braintree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = react_native_braintree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31E5D268D84A0645CDC0A99F18A7063C /* react-native-braintree-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "react-native-braintree-prefix.pch"; sourceTree = "<group>"; };
+		5649E97117D26E2DCC90E6BC91680435 /* Pods-react-native-braintree_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-react-native-braintree_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		59316EF6A3F5386DBFE907D506CC0B39 /* Pods-react-native-braintree_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-react-native-braintree_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		5AFB78B56D5B7D017D024A25B63467FE /* Pods-react-native-braintree_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-react-native-braintree_Tests-dummy.m"; sourceTree = "<group>"; };
+		66A2CBD3568B071C11B77A6E6BE08DD3 /* Pods-react-native-braintree_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-react-native-braintree_Tests-resources.sh"; sourceTree = "<group>"; };
+		6B1A784AE6947549E2D2E7FD8CEDB74A /* react-native-braintree-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "react-native-braintree-dummy.m"; sourceTree = "<group>"; };
+		711672C64EF305469DF3D11154BB79E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7CA8FFCB55473CE54C20F52A739E371A /* react-native-braintree.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "react-native-braintree.modulemap"; sourceTree = "<group>"; };
+		84317A50CAEFDDD0C2275F7FA0A31B66 /* react-native-braintree-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "react-native-braintree-umbrella.h"; sourceTree = "<group>"; };
+		97BB155DAE6C4B6B9C98EF7F3BAD365C /* Pods-react-native-braintree_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-react-native-braintree_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A995536BA6A6808A743787F70560D04A /* react-native-braintree-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "react-native-braintree-Private.xcconfig"; sourceTree = "<group>"; };
+		AB2BEB89AA919E812069C23D1F4D66D3 /* Pods-react-native-braintree_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-react-native-braintree_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		AF7470C26A105F2240A0917E5FEB0D7B /* react-native-braintree.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "react-native-braintree.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D860C78C97C491915D46DA773C1E19FB /* Pods_react_native_braintree_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_react_native_braintree_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAF0448AC6AE2D874AE376C32ECA6008 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4A76367B48439E177FBE173D2B09EAE /* Pods-react-native-braintree_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-react-native-braintree_Tests.modulemap"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C70AC83D00C451961B170832AC17C498 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF76E29A1EA34A936565778C0791E554 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D95EF99D35BA2FB51174C32F60697E9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA9A97145830C1D12FD8DE83D973E637 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5C37E262CBA99D86BAF3CF799C2CC2D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		063ABF009BCD7AC7D732671A20F973EA /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				A3BC904AD0FF3DB452EBDDE6F26E1B45 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		0F65DBF0432632CB69980F84A6E0F66F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2698B3A5DDFD5296CF5F8C1DD3305EF3 /* Pods-react-native-braintree_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		1A31005BC67E9B76C3CA4790864B8188 /* react-native-braintree */ = {
+			isa = PBXGroup;
+			children = (
+				063ABF009BCD7AC7D732671A20F973EA /* Pod */,
+				DC212D471E4BC02ADC34CE31CE587407 /* Support Files */,
+			);
+			name = "react-native-braintree";
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		2698B3A5DDFD5296CF5F8C1DD3305EF3 /* Pods-react-native-braintree_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2196380717DB549AAB1DF686531D70EC /* Info.plist */,
+				E4A76367B48439E177FBE173D2B09EAE /* Pods-react-native-braintree_Tests.modulemap */,
+				5649E97117D26E2DCC90E6BC91680435 /* Pods-react-native-braintree_Tests-acknowledgements.markdown */,
+				AB2BEB89AA919E812069C23D1F4D66D3 /* Pods-react-native-braintree_Tests-acknowledgements.plist */,
+				5AFB78B56D5B7D017D024A25B63467FE /* Pods-react-native-braintree_Tests-dummy.m */,
+				59316EF6A3F5386DBFE907D506CC0B39 /* Pods-react-native-braintree_Tests-frameworks.sh */,
+				66A2CBD3568B071C11B77A6E6BE08DD3 /* Pods-react-native-braintree_Tests-resources.sh */,
+				18429F8E3C6BAC5675930CBB2363E83B /* Pods-react-native-braintree_Tests-umbrella.h */,
+				97BB155DAE6C4B6B9C98EF7F3BAD365C /* Pods-react-native-braintree_Tests.debug.xcconfig */,
+				0D79861769A2A640A7F2807823320004 /* Pods-react-native-braintree_Tests.release.xcconfig */,
+			);
+			name = "Pods-react-native-braintree_Tests";
+			path = "Target Support Files/Pods-react-native-braintree_Tests";
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				711672C64EF305469DF3D11154BB79E5 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				E6E3DC05DC5629061CD1DBAFBCE9BE3D /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				0F65DBF0432632CB69980F84A6E0F66F /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A3BC904AD0FF3DB452EBDDE6F26E1B45 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				11E606B21BD620DA00D4177F /* BTManager.h */,
+				11E606B31BD620DA00D4177F /* BTManager.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D860C78C97C491915D46DA773C1E19FB /* Pods_react_native_braintree_Tests.framework */,
+				AF7470C26A105F2240A0917E5FEB0D7B /* react-native-braintree.bundle */,
+				27347C18406DF8303A6A709192EDDA9C /* react_native_braintree.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC212D471E4BC02ADC34CE31CE587407 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAF0448AC6AE2D874AE376C32ECA6008 /* Info.plist */,
+				7CA8FFCB55473CE54C20F52A739E371A /* react-native-braintree.modulemap */,
+				1FB850C69B314C157D5443598F1387F6 /* react-native-braintree.xcconfig */,
+				A995536BA6A6808A743787F70560D04A /* react-native-braintree-Private.xcconfig */,
+				6B1A784AE6947549E2D2E7FD8CEDB74A /* react-native-braintree-dummy.m */,
+				31E5D268D84A0645CDC0A99F18A7063C /* react-native-braintree-prefix.pch */,
+				84317A50CAEFDDD0C2275F7FA0A31B66 /* react-native-braintree-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/react-native-braintree";
+			sourceTree = "<group>";
+		};
+		E6E3DC05DC5629061CD1DBAFBCE9BE3D /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A31005BC67E9B76C3CA4790864B8188 /* react-native-braintree */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		36CFFA68367804EF638B80567767B137 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C8B5932FFDBB9F7C6AFBE9DD6EAF119 /* react-native-braintree-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7118CFD2D2B28F97D1C379C36631C43 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11E606B41BD620DA00D4177F /* BTManager.h in Headers */,
+				10DAEFC61A7F81B1D5CE477BF0459F61 /* Pods-react-native-braintree_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0AB6F5B2A3DBA45ADB66F292DDB18ADB /* react-native-braintree-react-native-braintree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AFE1A96A1575A45CFCE4BC959E6A619 /* Build configuration list for PBXNativeTarget "react-native-braintree-react-native-braintree" */;
+			buildPhases = (
+				0990771475C49D4DFDF84BAC0B93F002 /* Sources */,
+				D95EF99D35BA2FB51174C32F60697E9B /* Frameworks */,
+				73DE55B40B0C5A5D2D279C34134C1A9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "react-native-braintree-react-native-braintree";
+			productName = "react-native-braintree-react-native-braintree";
+			productReference = AF7470C26A105F2240A0917E5FEB0D7B /* react-native-braintree.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		843524D20DA8640B8AE7D14EBAD72664 /* react-native-braintree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62D4B5457C26E772B54590516B9D9F83 /* Build configuration list for PBXNativeTarget "react-native-braintree" */;
+			buildPhases = (
+				F15A1820A2A42E1B849A5D94395DB8CD /* Sources */,
+				C70AC83D00C451961B170832AC17C498 /* Frameworks */,
+				F39DC7AA150F671F4BF25CF519A80F7C /* Resources */,
+				36CFFA68367804EF638B80567767B137 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A186384A4EE56320338CFF78E517E932 /* PBXTargetDependency */,
+			);
+			name = "react-native-braintree";
+			productName = "react-native-braintree";
+			productReference = 27347C18406DF8303A6A709192EDDA9C /* react_native_braintree.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FD9CD91CA8705F6212EB1D1C0CAA955A /* Pods-react-native-braintree_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33A6F73AA78DC95467C45FFFFE07C171 /* Build configuration list for PBXNativeTarget "Pods-react-native-braintree_Tests" */;
+			buildPhases = (
+				92A241D400E556915C0F0BD4DE4BDF57 /* Sources */,
+				FA9A97145830C1D12FD8DE83D973E637 /* Frameworks */,
+				B7118CFD2D2B28F97D1C379C36631C43 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16E7A699175E225F6B017B25DC8CFDE2 /* PBXTargetDependency */,
+			);
+			name = "Pods-react-native-braintree_Tests";
+			productName = "Pods-react-native-braintree_Tests";
+			productReference = D860C78C97C491915D46DA773C1E19FB /* Pods_react_native_braintree_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD9CD91CA8705F6212EB1D1C0CAA955A /* Pods-react-native-braintree_Tests */,
+				843524D20DA8640B8AE7D14EBAD72664 /* react-native-braintree */,
+				0AB6F5B2A3DBA45ADB66F292DDB18ADB /* react-native-braintree-react-native-braintree */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		73DE55B40B0C5A5D2D279C34134C1A9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F39DC7AA150F671F4BF25CF519A80F7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E46F41BF78474DA2F14F3CE647AAF3 /* react-native-braintree.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0990771475C49D4DFDF84BAC0B93F002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92A241D400E556915C0F0BD4DE4BDF57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0590FE4AB8C4B4F5061C70C5B26CBA6 /* Pods-react-native-braintree_Tests-dummy.m in Sources */,
+				11E606B51BD620DA00D4177F /* BTManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F15A1820A2A42E1B849A5D94395DB8CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3368E7BE49ACF70BA580C5295548375 /* react-native-braintree-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		16E7A699175E225F6B017B25DC8CFDE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "react-native-braintree";
+			target = 843524D20DA8640B8AE7D14EBAD72664 /* react-native-braintree */;
+			targetProxy = 136FC9D920BF6C91E3F90D39AAE6B8C2 /* PBXContainerItemProxy */;
+		};
+		A186384A4EE56320338CFF78E517E932 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "react-native-braintree-react-native-braintree";
+			target = 0AB6F5B2A3DBA45ADB66F292DDB18ADB /* react-native-braintree-react-native-braintree */;
+			targetProxy = 9B429B0F2E0B39EA0B6E05484295C04D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		03CA91998D6773EC5D02B3DB87B8353E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0B57334D6C23DADAA4F7D802A5760EB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		0C5830A94D2B696A7F10BE41E627C95A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A995536BA6A6808A743787F70560D04A /* react-native-braintree-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/react-native-braintree/react-native-braintree-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/react-native-braintree/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/react-native-braintree/react-native-braintree.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = react_native_braintree;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2603B750E4770E407B2A66DB92871E1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97BB155DAE6C4B6B9C98EF7F3BAD365C /* Pods-react-native-braintree_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-react-native-braintree_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-react-native-braintree_Tests/Pods-react-native-braintree_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_react_native_braintree_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		863B1C86366D51B65B475F1964493A5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A995536BA6A6808A743787F70560D04A /* react-native-braintree-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = "react-native-braintree";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		9923770F05917F05D3BEA4E9C3ABCA85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D79861769A2A640A7F2807823320004 /* Pods-react-native-braintree_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-react-native-braintree_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-react-native-braintree_Tests/Pods-react-native-braintree_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_react_native_braintree_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D30D8BB31CA64566E8985DE818A847F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A995536BA6A6808A743787F70560D04A /* react-native-braintree-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/react-native-braintree/react-native-braintree-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/react-native-braintree/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/react-native-braintree/react-native-braintree.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = react_native_braintree;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F76FFC19B555502E7646DCFCD68AB63D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A995536BA6A6808A743787F70560D04A /* react-native-braintree-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = "react-native-braintree";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2AFE1A96A1575A45CFCE4BC959E6A619 /* Build configuration list for PBXNativeTarget "react-native-braintree-react-native-braintree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				863B1C86366D51B65B475F1964493A5A /* Debug */,
+				F76FFC19B555502E7646DCFCD68AB63D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B57334D6C23DADAA4F7D802A5760EB2 /* Debug */,
+				03CA91998D6773EC5D02B3DB87B8353E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33A6F73AA78DC95467C45FFFFE07C171 /* Build configuration list for PBXNativeTarget "Pods-react-native-braintree_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2603B750E4770E407B2A66DB92871E1B /* Debug */,
+				9923770F05917F05D3BEA4E9C3ABCA85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62D4B5457C26E772B54590516B9D9F83 /* Build configuration list for PBXNativeTarget "react-native-braintree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C5830A94D2B696A7F10BE41E627C95A /* Debug */,
+				D30D8BB31CA64566E8985DE818A847F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

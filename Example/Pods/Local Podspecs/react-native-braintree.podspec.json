@@ -1,0 +1,25 @@
+{
+  "name": "react-native-braintree",
+  "version": "0.1.0",
+  "summary": "A short description of react-native-braintree.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/react-native-braintree",
+  "license": "MIT",
+  "authors": {
+    "Alan Wong": "alawong@paypal.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/react-native-braintree.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "react-native-braintree": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
