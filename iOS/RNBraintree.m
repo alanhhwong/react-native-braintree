@@ -7,6 +7,7 @@ RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(setup:(NSString *)clientToken)
 {
+  [Braintree setReturnURLScheme:@"org.reactjs.native.example.Apps.payments"];
   self.braintree = [Braintree braintreeWithClientToken:clientToken];
 }
 
@@ -21,6 +22,47 @@ RCT_EXPORT_METHOD(showPaymentViewController:(RCTResponseSenderBlock)callback)
   
   self.reactRoot = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
   [self.reactRoot presentViewController:navigationController animated:YES completion:nil];
+}
+
+RCT_EXPORT_METHOD(showPayPalViewController:(RCTResponseSenderBlock)callback)
+{
+  
+  self.callback = callback;
+  
+  BTPaymentProvider *provider = [self.braintree paymentProviderWithDelegate:self];
+
+  [provider createPaymentMethod:BTPaymentProviderTypePayPal];
+  
+}
+
+- (void)paymentMethodCreator:(id)sender didCreatePaymentMethod:(BTPaymentMethod *)paymentMethod {
+  self.callback(@[[NSNull null],paymentMethod.nonce]);
+}
+
+- (void)paymentMethodCreatorWillPerformAppSwitch:(id)sender {
+  // TODO
+}
+
+- (void)paymentMethodCreatorWillProcess:(id)sender {
+  // TODO
+}
+
+- (void)paymentMethodCreatorDidCancel:(id)sender {
+  self.callback(@[[NSString stringWithFormat:@"User cancelled payment request"],[NSNull null]]);
+}
+
+- (void)paymentMethodCreator:(id)sender didFailWithError:(NSError *)error {
+  self.callback(@[[NSString stringWithFormat:@"%@",error.description],[NSNull null]]);
+}
+
+- (void)paymentMethodCreator:(id)sender requestsPresentationOfViewController:(UIViewController *)viewController {
+  self.reactRoot = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+  [self.reactRoot presentViewController:viewController animated:YES completion:nil];
+}
+
+- (void)paymentMethodCreator:(id)sender requestsDismissalOfViewController:(UIViewController *)viewController {
+  self.reactRoot = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+  [self.reactRoot dismissViewControllerAnimated:true completion:nil];
 }
 
 - (void)userDidCancelPayment {
