@@ -1,4 +1,4 @@
-#import "RCTBridge.h"
+#import "RCTBridgeModule.h"
 #import <Braintree/Braintree.h>
 
 @interface RNBraintree : UIViewController <RCTBridgeModule, BTDropInViewControllerDelegate>
