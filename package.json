@@ -1,0 +1,19 @@
+{
+  "name": "react-native-braintree",
+  "version": "0.0.1",
+  "description": "A react native interface for integrating payments using Braintree's v.zero SDK",
+  "main": "js/Braintree.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alawong/react-native-braintree.git"
+  },
+  "author": "Alan Wong <alan.wong@braintreepayments.com> (https://github.com/alawong)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alawong/react-native-braintree/issues"
+  },
+  "homepage": "https://github.com/alawong/react-native-braintree/",
+  "peerDependencies": {
+    "react-native": ">=0.8.0"
+  }
+}

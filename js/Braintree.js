@@ -1,6 +1,6 @@
 'use strict';
 
-var RNBraintree = require('NativeModules').RNBraintree;
+var RNBraintree = require('react-native').NativeModules.RNBraintree;
 
 var Braintree = {
 	setup(token) {
