@@ -1,7 +1,7 @@
 # react-native-braintree
 
 A react native interface for integrating payments using Braintree's v.zero SDK
-![Accepts Credit/Debit Cards](/Screenshots/card.png) ![Accepts PayPal](/Screenshots/paypal.png)
+![Accepts Credit/Debit Cards](/Screenshots/vzero.png)
 
 ## Usage
 
