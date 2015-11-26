@@ -1,28 +1,44 @@
 # react-native-braintree
 
-[![CI Status](http://img.shields.io/travis/Alan Wong/react-native-braintree.svg?style=flat)](https://travis-ci.org/Alan Wong/react-native-braintree)
-[![Version](https://img.shields.io/cocoapods/v/react-native-braintree.svg?style=flat)](http://cocoapods.org/pods/react-native-braintree)
-[![License](https://img.shields.io/cocoapods/l/react-native-braintree.svg?style=flat)](http://cocoapods.org/pods/react-native-braintree)
-[![Platform](https://img.shields.io/cocoapods/p/react-native-braintree.svg?style=flat)](http://cocoapods.org/pods/react-native-braintree)
+A react native interface for integrating payments using Braintree's v.zero SDK
+![Accepts Credit/Debit Cards](/Screenshots/card.png) ![Accepts PayPal](/Screenshots/paypal.png)
 
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+### Setup
+```js
+var BTClient = require('react-native-braintree');
+BTClient.setup(<token>);
+```
+You can find a demo client token [here](https://developers.braintreepayments.com/start/hello-client/ios/v3).
 
-## Requirements
-
-## Installation
-
-react-native-braintree is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "react-native-braintree"
+### Show Payment Screen
+```js
+BTClient.showPaymentViewController(function(err, nonce) {
+  //payment succeeded, pass nonce to server
+});
 ```
 
-## Author
+## Installation
+1. `react-native init BTRNSample` (skip for existing projects)
+2. Run `npm install react-native-braintree --save` to add the package
+3. Inside the ios directory, create a Podfile:
 
-Alan Wong, alawong@paypal.com
+  ```ruby
+  source 'https://github.com/CocoaPods/Specs.git'
+  pod 'React', :subspecs => ['Core', 'RCTImage', 'RCTNetwork', 'RCTText', 'RCTWebSocket'], :path => '../node_modules/react-native'
+  pod 'react-native-braintree', :path => '../node_modules/react-native-braintree'
+  ```
+
+4. Run `pod install`.  This installs the Braintree iOS SDK and a new workspace is created.
+
+5. Open `BTRNSample.xcworkspace`
+
+6. Under your app target -> build settings, look for `Other Linker Flags` and add `$(inherited)`
+
+  ![Accepts Credit/Debit Cards](/Screenshots/linker.png)
+
+7. Build and run project!  If it fails the first time, clean and rebuild.
 
 ## License
 
