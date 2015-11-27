@@ -5,9 +5,14 @@
 
 RCT_EXPORT_MODULE();
 
+RCT_EXPORT_METHOD(setupWithBundleId:(NSString *)clientToken bundleId:(NSString*)bundleId)
+{
+  [Braintree setReturnURLScheme:bundleId];
+  self.braintree = [Braintree braintreeWithClientToken:clientToken];
+}
+
 RCT_EXPORT_METHOD(setup:(NSString *)clientToken)
 {
-  [Braintree setReturnURLScheme:@"org.reactjs.native.example.Apps.payments"];
   self.braintree = [Braintree braintreeWithClientToken:clientToken];
 }
 
@@ -17,7 +22,7 @@ RCT_EXPORT_METHOD(showPaymentViewController:(RCTResponseSenderBlock)callback)
   dropInViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(userDidCancelPayment)];
   
   self.callback = callback;
-
+  
   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:dropInViewController];
   
   self.reactRoot = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
@@ -30,7 +35,7 @@ RCT_EXPORT_METHOD(showPayPalViewController:(RCTResponseSenderBlock)callback)
   self.callback = callback;
   
   BTPaymentProvider *provider = [self.braintree paymentProviderWithDelegate:self];
-
+  
   [provider createPaymentMethod:BTPaymentProviderTypePayPal];
   
 }
@@ -75,7 +80,7 @@ RCT_EXPORT_METHOD(showPayPalViewController:(RCTResponseSenderBlock)callback)
 }
 
 - (void)dropInViewControllerDidCancel:(__unused BTDropInViewController *)viewController {
-  [viewController dismissViewControllerAnimated:YES completion:nil];  
+  [viewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

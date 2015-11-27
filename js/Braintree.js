@@ -3,8 +3,13 @@
 var RNBraintree = require('NativeModules').RNBraintree;
 
 var Braintree = {
-	setup(token, bundleId) {
-		RNBraintree.setup(token, bundleId);
+
+	setupWithBundleId(token, bundleId) {
+		RNBraintree.setupWithBundleId(token, bundleId);
+	},
+
+	setup(token) {
+		RNBraintree.setup(token);
 	},
 
 	showPaymentViewController(callback) {
@@ -14,6 +19,7 @@ var Braintree = {
 	showPayPalViewController(callback) {
 		RNBraintree.showPayPalViewController(callback);
 	}
+
 };
 
 module.exports = Braintree;
