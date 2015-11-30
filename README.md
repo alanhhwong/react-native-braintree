@@ -12,9 +12,23 @@ BTClient.setup(<token>);
 ```
 You can find a demo client token [here](https://developers.braintreepayments.com/start/hello-client/ios/v3).
 
+To take advantage of [One Touch](https://developers.braintreepayments.com/guides/one-touch/overview/ios/v3), set up with your bundleId
+```js
+var BTClient = require('react-native-braintree');
+BTClient.setup(<token>, <bundleId>);
+```
+
 ### Show Payment Screen
+v.zero
 ```js
 BTClient.showPaymentViewController(function(err, nonce) {
+  //payment succeeded, pass nonce to server
+});
+```
+
+PayPal only
+```js
+BTClient.showPayPalViewController(function(err, nonce) {
   //payment succeeded, pass nonce to server
 });
 ```
