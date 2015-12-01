@@ -54,6 +54,13 @@ BTClient.showPayPalViewController(function(err, nonce) {
 
 7. Build and run project!  If it fails the first time, clean and rebuild.
 
+## Requirements
+
+Tested with:
+* Node 4.1.0
+* npm 2.14.3
+* react-native 0.8.0
+
 ## License
 
 react-native-braintree is available under the MIT license. See the LICENSE file for more info.
