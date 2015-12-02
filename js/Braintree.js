@@ -4,8 +4,8 @@ var RNBraintree = require('react-native').NativeModules.RNBraintree;
 
 var Braintree = {
 
-	setupWithBundleId(token, bundleId) {
-		RNBraintree.setupWithBundleId(token, bundleId);
+	setupWithURLScheme(token, urlscheme) {
+		RNBraintree.setupWithURLScheme(token, urlscheme);
 	},
 
 	setup(token) {
