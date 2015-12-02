@@ -1,6 +1,6 @@
 {
   "name": "react-native-braintree",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A react native interface for integrating payments using Braintree's v.zero SDK",
   "main": "js/Braintree.js",
   "repository": {
