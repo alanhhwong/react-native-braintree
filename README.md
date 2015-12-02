@@ -20,7 +20,7 @@ To take advantage of [One Touch](https://developers.braintreepayments.com/guides
 2. Use setupWithURLScheme instead, passing the url scheme you have registered in previous step
 ```js
 var BTClient = require('react-native-braintree');
-BTClient.setup(<token>, <url scheme>);
+BTClient.setupWithURLScheme(<token>, <url scheme>);
 ```
 
 3. Add this delegate method (callback) to your AppDelegate.m
