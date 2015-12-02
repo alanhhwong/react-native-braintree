@@ -3,7 +3,7 @@
 
 @implementation RNBraintree
 
-static NSString *BundleId;
+static NSString *URLScheme;
 
 + (instancetype)sharedInstance {
     static RNBraintree *_sharedInstance = nil;
@@ -16,10 +16,10 @@ static NSString *BundleId;
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(setupWithBundleId:(NSString *)clientToken bundleId:(NSString*)bundleId)
+RCT_EXPORT_METHOD(setupWithURLScheme:(NSString *)clientToken urlscheme:(NSString*)urlscheme)
 {
-  BundleId = bundleId;
-  [Braintree setReturnURLScheme:bundleId];
+  URLScheme = urlscheme;
+  [Braintree setReturnURLScheme:urlscheme];
   self.braintree = [Braintree braintreeWithClientToken:clientToken];
 }
 
@@ -54,7 +54,7 @@ RCT_EXPORT_METHOD(showPayPalViewController:(RCTResponseSenderBlock)callback)
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
 
-    if ([url.scheme localizedCaseInsensitiveCompare:BundleId] == NSOrderedSame) {
+    if ([url.scheme localizedCaseInsensitiveCompare:URLScheme] == NSOrderedSame) {
         return [Braintree handleOpenURL:url sourceApplication:sourceApplication];
     }
     return NO;
