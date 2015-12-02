@@ -3,10 +3,22 @@
 
 @implementation RNBraintree
 
+static NSString *BundleId;
+
++ (instancetype)sharedInstance {
+    static RNBraintree *_sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[RNBraintree alloc] init];
+    });
+    return _sharedInstance;
+}
+
 RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(setupWithBundleId:(NSString *)clientToken bundleId:(NSString*)bundleId)
 {
+  BundleId = bundleId;
   [Braintree setReturnURLScheme:bundleId];
   self.braintree = [Braintree braintreeWithClientToken:clientToken];
 }
@@ -20,24 +32,32 @@ RCT_EXPORT_METHOD(showPaymentViewController:(RCTResponseSenderBlock)callback)
 {
   BTDropInViewController *dropInViewController = [self.braintree dropInViewControllerWithDelegate:self];
   dropInViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(userDidCancelPayment)];
-  
+
   self.callback = callback;
-  
+
   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:dropInViewController];
-  
+
   self.reactRoot = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
   [self.reactRoot presentViewController:navigationController animated:YES completion:nil];
 }
 
 RCT_EXPORT_METHOD(showPayPalViewController:(RCTResponseSenderBlock)callback)
 {
-  
+
   self.callback = callback;
-  
+
   BTPaymentProvider *provider = [self.braintree paymentProviderWithDelegate:self];
-  
+
   [provider createPaymentMethod:BTPaymentProviderTypePayPal];
-  
+
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+
+    if ([url.scheme localizedCaseInsensitiveCompare:BundleId] == NSOrderedSame) {
+        return [Braintree handleOpenURL:url sourceApplication:sourceApplication];
+    }
+    return NO;
 }
 
 - (void)paymentMethodCreator:(id)sender didCreatePaymentMethod:(BTPaymentMethod *)paymentMethod {
