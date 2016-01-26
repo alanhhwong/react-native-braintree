@@ -3,6 +3,10 @@
 A react native interface for integrating payments using [Braintree's v.zero SDK](https://developers.braintreepayments.com/start/overview).
 ![Accepts Credit/Debit Cards](/Screenshots/vzero.png)
 
+## Sample
+Full Client + Server sample can be found here:
+[https://github.com/alawong/BTRNSample](https://github.com/alawong/BTRNSample)
+
 ## Usage
 
 ### Setup
