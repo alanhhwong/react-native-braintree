@@ -1,0 +1,1 @@
+../../../Braintree/Braintree/UI/Views/Vector Art/BTUICoinbaseWordmarkVectorArtView.h

@@ -1,0 +1,9 @@
+source 'https://github.com/CocoaPods/Specs.git'
+pod 'React', :path => '../node_modules/react-native', :subspecs => [
+  'Core',
+  'RCTImage',
+  'RCTNetwork',
+  'RCTText',
+  'RCTWebSocket'
+]
+pod 'react-native-braintree', :path => '../node_modules/react-native-braintree'

@@ -1,0 +1,67 @@
+PODS:
+  - Braintree (3.9.7):
+    - Braintree/API (= 3.9.7)
+    - Braintree/Coinbase (= 3.9.7)
+    - Braintree/Drop-In (= 3.9.7)
+    - Braintree/Payments (= 3.9.7)
+    - Braintree/PayPal (= 3.9.7)
+    - Braintree/UI (= 3.9.7)
+    - Braintree/Venmo (= 3.9.7)
+  - Braintree/API (3.9.7)
+  - Braintree/Coinbase (3.9.7):
+    - Braintree/API
+  - Braintree/Drop-In (3.9.7):
+    - Braintree/API
+    - Braintree/Coinbase
+    - Braintree/Payments
+    - Braintree/PayPal
+    - Braintree/UI
+    - Braintree/Venmo
+  - Braintree/Payments (3.9.7):
+    - Braintree/API
+    - Braintree/Coinbase
+    - Braintree/PayPal
+    - Braintree/Venmo
+  - Braintree/PayPal (3.9.7):
+    - Braintree/API
+    - Braintree/UI
+  - Braintree/UI (3.9.7):
+    - Braintree/API
+  - Braintree/Venmo (3.9.7):
+    - Braintree/API
+  - React (0.18.1):
+    - React/Core (= 0.18.1)
+  - react-native-braintree (0.2.0):
+    - Braintree (~> 3.9)
+    - React
+  - React/Core (0.18.1)
+  - React/RCTImage (0.18.1):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTNetwork (0.18.1):
+    - React/Core
+  - React/RCTText (0.18.1):
+    - React/Core
+  - React/RCTWebSocket (0.18.1):
+    - React/Core
+
+DEPENDENCIES:
+  - react-native-braintree (from `../node_modules/react-native-braintree`)
+  - React/Core (from `../node_modules/react-native`)
+  - React/RCTImage (from `../node_modules/react-native`)
+  - React/RCTNetwork (from `../node_modules/react-native`)
+  - React/RCTText (from `../node_modules/react-native`)
+  - React/RCTWebSocket (from `../node_modules/react-native`)
+
+EXTERNAL SOURCES:
+  React:
+    :path: "../node_modules/react-native"
+  react-native-braintree:
+    :path: "../node_modules/react-native-braintree"
+
+SPEC CHECKSUMS:
+  Braintree: e26231d5a4b486db87da7efc97051ded67cd4598
+  React: b567a0da88caa92333970a0b3c9db4b0f6684dc5
+  react-native-braintree: cc452184cc74d9905c6b9cf65b219160d0b8d00a
+
+COCOAPODS: 0.39.0

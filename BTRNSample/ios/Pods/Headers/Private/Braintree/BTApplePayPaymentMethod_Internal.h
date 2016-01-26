@@ -1,0 +1,1 @@
+../../../Braintree/Braintree/API/Models/BTApplePayPaymentMethod_Internal.h

@@ -1,0 +1,1 @@
+../../../Braintree/Braintree/Coinbase/@Public/BTCoinbase.h

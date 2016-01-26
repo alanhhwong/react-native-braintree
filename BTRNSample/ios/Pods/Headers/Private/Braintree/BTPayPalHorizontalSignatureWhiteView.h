@@ -1,0 +1,1 @@
+../../../Braintree/Braintree/PayPal/Views/BTPayPalHorizontalSignatureWhiteView.h
