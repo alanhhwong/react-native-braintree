@@ -52,11 +52,33 @@ BTClient.showPayPalViewController(function(err, nonce) {
 ## Installation
 1. `react-native init BTRNSample` (skip for existing projects)
 2. Run `npm install react-native-braintree --save` to add the package
-3. Inside the ios directory, create a Podfile:
+3. Inside the ``ios/`` directory, create a Podfile:
 
   ```ruby
+  # Podfile for cocoapods 1.0
   source 'https://github.com/CocoaPods/Specs.git'
-  pod 'React', :subspecs => ['Core', 'RCTImage', 'RCTNetwork', 'RCTText', 'RCTWebSocket'], :path => '../node_modules/react-native'
+  target 'yourAppTarget' do
+    pod 'React', :path => '../node_modules/react-native', :subspecs => [
+      'Core',
+      'RCTImage',
+      'RCTNetwork',
+      'RCTText',
+      'RCTWebSocket'
+    ]
+    pod 'react-native-braintree', :path => '../node_modules/react-native-braintree'
+  end
+  ```
+
+  Or if you use an older CocoaPods version:
+  ```ruby
+  source 'https://github.com/CocoaPods/Specs.git'
+  pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    'Core',
+    'RCTImage',
+    'RCTNetwork',
+    'RCTText',
+    'RCTWebSocket'
+  ]
   pod 'react-native-braintree', :path => '../node_modules/react-native-braintree'
   ```
 
