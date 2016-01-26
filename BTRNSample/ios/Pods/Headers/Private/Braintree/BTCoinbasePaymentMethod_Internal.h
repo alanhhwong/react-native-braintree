@@ -1,1 +1,0 @@
-../../../Braintree/Braintree/API/Models/BTCoinbasePaymentMethod_Internal.h

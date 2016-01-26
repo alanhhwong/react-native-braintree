@@ -1,1 +1,0 @@
-../../../Braintree/Braintree/UI/Views/Payments Components/BTUICTAControl.h

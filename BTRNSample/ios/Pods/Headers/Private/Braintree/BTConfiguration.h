@@ -1,1 +1,0 @@
-../../../Braintree/Braintree/API/Client/BTConfiguration.h

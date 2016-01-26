@@ -1,1 +1,0 @@
-../../../Braintree/Braintree/UI/Views/Vector Art/BTUIMaestroVectorArtView.h

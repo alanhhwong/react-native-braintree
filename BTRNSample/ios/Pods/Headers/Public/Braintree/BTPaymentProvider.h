@@ -1,1 +1,0 @@
-../../../Braintree/Braintree/Payments/@Public/BTPaymentProvider.h
