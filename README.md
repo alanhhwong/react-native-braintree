@@ -97,6 +97,11 @@ To take advantage of [One Touch](https://developers.braintreepayments.com/guides
 
 7. Build and run project!  If it fails the first time, clean and rebuild.
 
+Because React Native's iOS code is now pulled in via CocoaPods, you also need to remove the ``React``, ``RCTImage``, etc. subprojects from your app's Xcode project.
+
+![Remove Libraries](/Screenshots/removeLibraries.png)
+
+
 ## Requirements
 
 Tested with:
