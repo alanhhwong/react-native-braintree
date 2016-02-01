@@ -16,28 +16,6 @@ BTClient.setup(<token>);
 ```
 You can find a demo client token [here](https://developers.braintreepayments.com/start/hello-client/ios/v3).
 
-To take advantage of [One Touch](https://developers.braintreepayments.com/guides/one-touch/overview/ios/v3), there are additional setup required:
-
-1. Register a URL scheme in Xcode (should always start with your Bundle ID)
-  ![Register URL Scheme](/Screenshots/urlscheme.png)
-
-2. Use setupWithURLScheme instead, passing the url scheme you have registered in previous step
-```js
-var BTClient = require('react-native-braintree');
-BTClient.setupWithURLScheme(<token>, <url scheme>);
-```
-
-3. Add this delegate method (callback) to your AppDelegate.m
-```objc
-  #import <RNBraintree.h>
-
-  - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return [[RNBraintree sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
-  }
-```
-
-4. Optionally, install the [fake PayPal wallet app](https://github.com/braintree/fake-wallet-app-ios) in your simulator to simulate and test responses
-
 ### Show Payment Screen
 v.zero
 ```js
@@ -52,6 +30,29 @@ BTClient.showPayPalViewController(function(err, nonce) {
   //payment succeeded, pass nonce to server
 });
 ```
+
+### One Touch
+To take advantage of [One Touch](https://developers.braintreepayments.com/guides/one-touch/overview/ios/v3), there are additional setup required:
+
+1. Register a URL scheme in Xcode (should always start with your Bundle ID)
+  ![Register URL Scheme](/Screenshots/urlscheme.png)
+
+2. Use setupWithURLScheme instead, passing the url scheme you have registered in previous step
+  ```js
+  var BTClient = require('react-native-braintree');
+  BTClient.setupWithURLScheme(<token>, <url scheme>);
+  ```
+
+3. Add this delegate method (callback) to your AppDelegate.m
+  ```objc
+  #import <RNBraintree.h>
+
+  - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[RNBraintree sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+  }
+  ```
+
+4. Optionally, install the [fake PayPal wallet app](https://github.com/braintree/fake-wallet-app-ios) in your simulator to simulate and test responses
 
 ## Installation
 1. `react-native init BTRNSample` (skip for existing projects)
