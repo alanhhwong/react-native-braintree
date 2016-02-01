@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name             = "react-native-braintree"
-  s.version          = "0.2.0"
+  s.version          = "0.3.0"
   s.summary          = "A react native interface for integrating payments using Braintree's v.zero SDK"
   s.homepage         = "https://github.com/alawong/react-native-braintree"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
