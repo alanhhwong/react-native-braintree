@@ -52,6 +52,29 @@ RCT_EXPORT_METHOD(showPayPalViewController:(RCTResponseSenderBlock)callback)
 
 }
 
+RCT_EXPORT_METHOD(getCardNonce: (NSString *)cardNumber
+               expirationMonth: (NSString *)expirationMonth
+                expirationYear: (NSString *)expirationYear
+                      callback: (RCTResponseSenderBlock)callback
+    )
+{
+  BTClientCardRequest *request = [BTClientCardRequest new];
+  request.number = cardNumber;
+  request.expirationMonth = expirationMonth;
+  request.expirationYear = expirationYear;
+
+  [self.braintree tokenizeCard:request
+    completion:^(NSString *nonce, NSError *error) {
+      NSArray *args = @[];
+      if ( error == nil ) {
+      args = @[[NSNull null], nonce];
+      } else {
+      args = @[error.description, [NSNull null]];
+      }
+      callback(args);
+    }];
+}
+
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
 
     if ([url.scheme localizedCaseInsensitiveCompare:URLScheme] == NSOrderedSame) {

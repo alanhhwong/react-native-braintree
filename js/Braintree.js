@@ -18,7 +18,11 @@ var Braintree = {
 
 	showPayPalViewController(callback) {
 		RNBraintree.showPayPalViewController(callback);
-	}
+	},
+
+  getCardNonce(cardNumber, expirationMonth, expirationYear, callback) {
+    RNBraintree.getCardNonce(cardNumber, expirationMonth, expirationYear, callback);
+  }
 
 };
 
