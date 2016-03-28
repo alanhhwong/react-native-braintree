@@ -31,6 +31,14 @@ BTClient.showPayPalViewController(function(err, nonce) {
 });
 ```
 
+## Custom Integration
+If you only want to tokenize credit card information, you can use the following:
+```js
+BTClient.getCardNonce("4111111111111111", "10", "20", function(err, result) {
+  //payment succeeded, pass nonce to server
+});
+```
+
 ### One Touch
 To take advantage of [One Touch](https://developers.braintreepayments.com/guides/one-touch/overview/ios/v3), there are additional setup required:
 
