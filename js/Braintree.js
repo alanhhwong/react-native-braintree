@@ -20,9 +20,9 @@ var Braintree = {
 		RNBraintree.showPayPalViewController(callback);
 	},
 
-  getCardNonce(cardNumber, expirationMonth, expirationYear, callback) {
-    RNBraintree.getCardNonce(cardNumber, expirationMonth, expirationYear, callback);
-  }
+    getCardNonce(cardNumber, expirationMonth, expirationYear, callback) {
+        RNBraintree.getCardNonce(cardNumber, expirationMonth, expirationYear, callback);
+    }
 
 };
 
