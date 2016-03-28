@@ -30,26 +30,28 @@ RCT_EXPORT_METHOD(setup:(NSString *)clientToken)
 
 RCT_EXPORT_METHOD(showPaymentViewController:(RCTResponseSenderBlock)callback)
 {
-  BTDropInViewController *dropInViewController = [self.braintree dropInViewControllerWithDelegate:self];
-  dropInViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(userDidCancelPayment)];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    BTDropInViewController *dropInViewController = [self.braintree dropInViewControllerWithDelegate:self];
+    dropInViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(userDidCancelPayment)];
 
-  self.callback = callback;
+    self.callback = callback;
 
-  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:dropInViewController];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:dropInViewController];
 
-  self.reactRoot = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
-  [self.reactRoot presentViewController:navigationController animated:YES completion:nil];
+    self.reactRoot = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    [self.reactRoot presentViewController:navigationController animated:YES completion:nil];
+  });
 }
 
 RCT_EXPORT_METHOD(showPayPalViewController:(RCTResponseSenderBlock)callback)
 {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    self.callback = callback;
 
-  self.callback = callback;
+    BTPaymentProvider *provider = [self.braintree paymentProviderWithDelegate:self];
 
-  BTPaymentProvider *provider = [self.braintree paymentProviderWithDelegate:self];
-
-  [provider createPaymentMethod:BTPaymentProviderTypePayPal];
-
+    [provider createPaymentMethod:BTPaymentProviderTypePayPal];
+  });
 }
 
 RCT_EXPORT_METHOD(getCardNonce: (NSString *)cardNumber
