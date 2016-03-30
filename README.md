@@ -19,23 +19,32 @@ You can find a demo client token [here](https://developers.braintreepayments.com
 ### Show Payment Screen
 v.zero
 ```js
-BTClient.showPaymentViewController(function(err, nonce) {
+BTClient.showPaymentViewController().then(function(nonce) {
   //payment succeeded, pass nonce to server
+})
+.catch(function(err) {
+  //error handling
 });
 ```
 
 PayPal only
 ```js
-BTClient.showPayPalViewController(function(err, nonce) {
+BTClient.showPayPalViewController().then(function(nonce) {
   //payment succeeded, pass nonce to server
+})
+.catch(function(err) {
+  //error handling
 });
 ```
 
 ## Custom Integration
 If you only want to tokenize credit card information, you can use the following:
 ```js
-BTClient.getCardNonce("4111111111111111", "10", "20", function(err, result) {
+BTClient.getCardNonce("4111111111111111", "10", "20").then(function(nonce) {
   //payment succeeded, pass nonce to server
+})
+.catch(function(err) {
+  //error handling
 });
 ```
 
