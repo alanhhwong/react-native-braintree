@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name             = "react-native-braintree"
-  s.version          = "0.4.1"
+  s.version          = "0.5.0"
   s.summary          = "A react native interface for integrating payments using Braintree's v.zero SDK"
   s.homepage         = "https://github.com/alawong/react-native-braintree"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.source_files = 'iOS/*'
 
-  s.dependency 'Braintree', '~> 3.9'
+  s.dependency 'Braintree'
   s.dependency 'React'
 end

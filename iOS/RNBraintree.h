@@ -1,9 +1,12 @@
 #import "RCTBridgeModule.h"
-#import <Braintree/Braintree.h>
+#import "BraintreeCore.h"
+#import "BraintreePayPal.h"
+#import "BraintreeCard.h"
+#import "BraintreeUI.h"
 
-@interface RNBraintree : UIViewController <RCTBridgeModule, BTDropInViewControllerDelegate, BTPaymentMethodCreationDelegate>
+@interface RNBraintree : UIViewController <RCTBridgeModule, BTDropInViewControllerDelegate, BTViewControllerPresentingDelegate>
 
-@property (nonatomic, strong) Braintree *braintree;
+@property (nonatomic, strong) BTAPIClient *braintreeClient;
 @property (nonatomic, strong) UIViewController *reactRoot;
 
 @property (nonatomic, strong) RCTResponseSenderBlock callback;
