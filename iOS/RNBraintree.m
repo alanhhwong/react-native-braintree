@@ -1,5 +1,6 @@
 #import "RNBraintree.h"
 #import "RCTUtils.h"
+#import "PPDataCollector.h"
 
 @implementation RNBraintree
 
@@ -74,6 +75,11 @@ RCT_EXPORT_METHOD(showPayPalViewController:(RCTResponseSenderBlock)callback)
             callback(args);
         }];
     });
+}
+
+RCT_EXPORT_METHOD(getPayPalClientMetadataId:(RCTResponseSenderBlock)callback)
+{
+    callback(@[[NSNull null], [PPDataCollector clientMetadataID]]);
 }
 
 RCT_EXPORT_METHOD(getCardNonce: (NSString *)cardNumber
