@@ -77,6 +77,25 @@ RCT_EXPORT_METHOD(showPayPalViewController:(RCTResponseSenderBlock)callback)
     });
 }
 
+RCT_EXPORT_METHOD(showBillingAgreementViewController:(RCTResponseSenderBlock)callback)
+{
+  dispatch_async(dispatch_get_main_queue(), ^{
+      BTPayPalDriver *payPalDriver = [[BTPayPalDriver alloc] initWithAPIClient:self.braintreeClient];
+      payPalDriver.viewControllerPresentingDelegate = self;
+      BTPayPalRequest *checkout = [[BTPayPalRequest alloc] init];
+      checkout.billingAgreementDescription = @"Your agreement description";
+      [payPalDriver authorizeAccountWithCompletion:^(BTPayPalAccountNonce *tokenizedPayPalAccount, NSError *error) {
+	  NSArray *args = @[];
+	  if ( error == nil ) {
+	    args = @[[NSNull null], tokenizedPayPalAccount.nonce];
+	  } else {
+	    args = @[error.description, [NSNull null]];
+	  }
+	  callback(args);
+	}];
+    });
+}
+
 RCT_EXPORT_METHOD(getPayPalClientMetadataId:(RCTResponseSenderBlock)callback)
 {
     callback(@[[NSNull null], [PPDataCollector clientMetadataID]]);
