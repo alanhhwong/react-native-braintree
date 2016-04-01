@@ -45,27 +45,28 @@ var Braintree = {
 	},
 
         showBillingAgreementViewController() {
-	    return new Promise(function(resolve, reject) {
-                RNBraintree.showBillingAgreementViewController(function(err, nonce) {
-                    nonce != null ? resolve(nonce) : reject(err);
-                });
-	    });
+	        return new Promise(function(resolve, reject) {
+                    RNBraintree.showBillingAgreementViewController(function(err, nonce) {
+			nonce != null ? resolve(nonce) : reject(err);
+                    });
+		});
 	},
 
 	getPayPalClientMetadataId() {
-		return new Promise(function(resolve, reject) {
-			RNBraintree.getPayPalClientMetadataId(function(err, nonce) {
-				nonce != null ? resolve(nonce) : reject(err);
-			});
+	        return new Promise(function(resolve, reject) {
+		    RNBraintree.getPayPalClientMetadataId(function(err, nonce) {
+			nonce != null ? resolve(nonce) : reject(err);
+		    });
 		});
 	},
-    getCardNonce(cardNumber, expirationMonth, expirationYear) {
-    	return new Promise(function(resolve, reject) {
-    		RNBraintree.getCardNonce(cardNumber, expirationMonth, expirationYear, function(err, nonce) {
+
+        getCardNonce(cardNumber, expirationMonth, expirationYear) {
+    	        return new Promise(function(resolve, reject) {
+    		    RNBraintree.getCardNonce(cardNumber, expirationMonth, expirationYear, function(err, nonce) {
     			nonce != null ? resolve(nonce) : reject(err);
+    		    });
     		});
-    	});
-    }
+	}
 
 };
 
