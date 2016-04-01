@@ -63,7 +63,7 @@ var Braintree = {
     	return new Promise(function(resolve, reject) {
     		RNBraintree.getCardNonce(cardNumber, expirationMonth, expirationYear, function(err, nonce) {
     			nonce != null ? resolve(nonce) : reject(err);
-    		});	
+    		});
     	});
     }
 
