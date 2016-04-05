@@ -82,17 +82,20 @@ RCT_EXPORT_METHOD(showPayPalPlusEmailViewController:(RCTResponseSenderBlock)call
 	BTPayPalDriver *payPalDriver = [[BTPayPalDriver alloc] initWithAPIClient:self.braintreeClient];
 	payPalDriver.viewControllerPresentingDelegate = self;
 	[payPalDriver authorizeAccountWithAdditionalScopes:[NSSet setWithArray:@[@"email"]]
-						completion:^(BTPayPalAccountNonce *tokenizedPayPalAccount, NSError *error) {
+						completion:^(BTPayPalAccountNonce * _Nullable tokenizedPayPalAccount, NSError * _Nullable error) {
 	    NSArray *args = @[];
-	    if ( error == nil ) {
-	      args = @[[NSNull null], @{@"nonce": tokenizedPayPalAccount.nonce,
-					@"email": tokenizedPayPalAccount.email}];
-	    } else {
-	      args = @[error.description, [NSNull null]];
+	    if (tokenizedPayPalAccount) {
+            args = @[[NSNull null], @{@"status": @"ok",
+                                      @"nonce": tokenizedPayPalAccount.nonce,
+                                      @"email": tokenizedPayPalAccount.email}];
+        } else if (error) {
+            args = @[error.localizedDescription, [NSNull null]];
+        } else {
+            args = @[[NSNull null], @{@"status": @"cancelled"}];
 	    }
 	    callback(args);
 	  }];
-      });
+    });
 }
 
 RCT_EXPORT_METHOD(showBillingAgreementViewController:(RCTResponseSenderBlock)callback)
