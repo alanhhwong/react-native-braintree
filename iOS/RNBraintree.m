@@ -98,6 +98,46 @@ RCT_EXPORT_METHOD(showPayPalPlusEmailViewController:(RCTResponseSenderBlock)call
     });
 }
 
+RCT_EXPORT_METHOD(showPayPalPlusAttributesViewController:(RCTResponseSenderBlock)callback)
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+	BTPayPalDriver *payPalDriver = [[BTPayPalDriver alloc] initWithAPIClient:self.braintreeClient];
+	payPalDriver.viewControllerPresentingDelegate = self;
+	[payPalDriver authorizeAccountWithAdditionalScopes:[NSSet setWithArray:@[@"email", @"address"]]
+						completion:^(BTPayPalAccountNonce * _Nullable tokenizedPayPalAccount, NSError * _Nullable   error) {
+	    NSArray *args = @[];
+	    if (tokenizedPayPalAccount) {
+            BTPostalAddress *address = tokenizedPayPalAccount.shippingAddress ?: tokenizedPayPalAccount.billingAddress;
+            NSMutableDictionary *dicAddress = [NSMutableDictionary
+						  dictionaryWithDictionary: @{@"street-address": address.streetAddress,
+									      @"locality": address.locality,
+									      @"country-code-alpha-2": address.countryCodeAlpha2,}];
+            if (address.recipientName) {
+                [dicAddress setObject:address.recipientName forKey:@"recipient-name"];
+            }
+            if (address.extendedAddress) {
+                [dicAddress setObject:address.extendedAddress forKey:@"extended-address"];
+            }
+            if (address.postalCode) {
+                [dicAddress setObject:address.postalCode forKey:@"postal-code"];
+            }
+            if (address.region) {
+                [dicAddress setObject:address.region forKey:@"region"];
+            }
+            args = @[[NSNull null], @{@"status": @"ok",
+                                      @"nonce": tokenizedPayPalAccount.nonce,
+                                      @"email": tokenizedPayPalAccount.email,
+                                      @"address": dicAddress}];
+        } else if (error) {
+            args = @[error.localizedDescription, [NSNull null]];
+        } else {
+            args = @[[NSNull null], @{@"status": @"cancelled"}];
+	    }
+	    callback(args);
+	  }];
+    });
+}
+
 RCT_EXPORT_METHOD(showBillingAgreementViewController:(RCTResponseSenderBlock)callback)
 {
   dispatch_async(dispatch_get_main_queue(), ^{

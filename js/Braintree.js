@@ -44,6 +44,14 @@ var Braintree = {
 		});
 	},
 
+	showPayPalPlusAttributesViewController() {
+		return new Promise(function(resolve, reject) {
+			RNBraintree.showPayPalPlusAttributesViewController(function(err, data) {
+				data != null ? resolve(data) : reject(err);
+			});
+		});
+	},
+
         showBillingAgreementViewController() {
 	        return new Promise(function(resolve, reject) {
                     RNBraintree.showBillingAgreementViewController(function(err, nonce) {
