@@ -109,9 +109,16 @@ RCT_EXPORT_METHOD(showPayPalPlusAttributesViewController:(RCTResponseSenderBlock
 	    if (tokenizedPayPalAccount) {
             BTPostalAddress *address = tokenizedPayPalAccount.shippingAddress ?: tokenizedPayPalAccount.billingAddress;
             NSMutableDictionary *dicAddress = [NSMutableDictionary
-						  dictionaryWithDictionary: @{@"street-address": address.streetAddress,
-									      @"locality": address.locality,
-									      @"country-code-alpha-2": address.countryCodeAlpha2,}];
+						  dictionaryWithDictionary: @{}];
+            if (address.streetAddress) {
+                [dicAddress setObject:address.streetAddress forKey:@"street-address"];
+            }
+            if (address.locality) {
+                [dicAddress setObject:address.locality forKey:@"locality"];
+            }
+            if (address.countryCodeAlpha2) {
+                [dicAddress setObject:address.countryCodeAlpha2 forKey:@"country-code-alpha-2"];
+            }
             if (address.recipientName) {
                 [dicAddress setObject:address.recipientName forKey:@"recipient-name"];
             }
