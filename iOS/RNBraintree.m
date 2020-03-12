@@ -192,6 +192,11 @@ RCT_EXPORT_METHOD(getCardNonce: (NSString *)cardNumber
      ];
 }
 
++ (BOOL)requiresMainQueueSetup
+{
+  return YES;
+}
+
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     if ([url.scheme localizedCaseInsensitiveCompare:URLScheme] == NSOrderedSame) {
         return [BTAppSwitch handleOpenURL:url sourceApplication:sourceApplication];
