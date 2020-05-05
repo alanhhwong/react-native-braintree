@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.source_files = 'iOS/*'
 
-  s.dependency 'Braintree', '= 4.9.1'
+  s.dependency 'Braintree', '= 4.32.1'
   s.dependency 'React'
 end
