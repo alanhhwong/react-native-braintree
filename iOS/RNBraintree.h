@@ -1,4 +1,4 @@
-#import "RCTBridgeModule.h"
+#import <React/RCTBridgeModule.h>
 #import "BraintreeCore.h"
 #import "BraintreePayPal.h"
 #import "BraintreeCard.h"
@@ -13,5 +13,6 @@
 
 + (instancetype)sharedInstance;
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
++ (BOOL)requiresMainQueueSetup;
 
 @end

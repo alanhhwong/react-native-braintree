@@ -1,5 +1,6 @@
 #import "RNBraintree.h"
 #import "RCTUtils.h"
+#import "PPDataCollector.h"
 
 @implementation RNBraintree
 
@@ -45,13 +46,13 @@ RCT_EXPORT_METHOD(showPaymentViewController:(RCTResponseSenderBlock)callback)
     dispatch_async(dispatch_get_main_queue(), ^{
         BTDropInViewController *dropInViewController = [[BTDropInViewController alloc] initWithAPIClient:self.braintreeClient];
         dropInViewController.delegate = self;
-        
+
         dropInViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(userDidCancelPayment)];
-        
+
         self.callback = callback;
-        
+
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:dropInViewController];
-        
+
         self.reactRoot = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
         [self.reactRoot presentViewController:navigationController animated:YES completion:nil];
     });
@@ -60,10 +61,9 @@ RCT_EXPORT_METHOD(showPaymentViewController:(RCTResponseSenderBlock)callback)
 RCT_EXPORT_METHOD(showPayPalViewController:(RCTResponseSenderBlock)callback)
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        
         BTPayPalDriver *payPalDriver = [[BTPayPalDriver alloc] initWithAPIClient:self.braintreeClient];
         payPalDriver.viewControllerPresentingDelegate = self;
-        
+
         [payPalDriver authorizeAccountWithCompletion:^(BTPayPalAccountNonce *tokenizedPayPalAccount, NSError *error) {
             NSArray *args = @[];
             if ( error == nil ) {
@@ -76,6 +76,99 @@ RCT_EXPORT_METHOD(showPayPalViewController:(RCTResponseSenderBlock)callback)
     });
 }
 
+RCT_EXPORT_METHOD(showPayPalPlusEmailViewController:(RCTResponseSenderBlock)callback)
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+	BTPayPalDriver *payPalDriver = [[BTPayPalDriver alloc] initWithAPIClient:self.braintreeClient];
+	payPalDriver.viewControllerPresentingDelegate = self;
+	[payPalDriver authorizeAccountWithAdditionalScopes:[NSSet setWithArray:@[@"email"]]
+						completion:^(BTPayPalAccountNonce * _Nullable tokenizedPayPalAccount, NSError * _Nullable error) {
+	    NSArray *args = @[];
+	    if (tokenizedPayPalAccount) {
+            args = @[[NSNull null], @{@"status": @"ok",
+                                      @"nonce": tokenizedPayPalAccount.nonce,
+                                      @"email": tokenizedPayPalAccount.email}];
+        } else if (error) {
+            args = @[error.localizedDescription, [NSNull null]];
+        } else {
+            args = @[[NSNull null], @{@"status": @"cancelled"}];
+	    }
+	    callback(args);
+	  }];
+    });
+}
+
+RCT_EXPORT_METHOD(showPayPalPlusAttributesViewController:(RCTResponseSenderBlock)callback)
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+	BTPayPalDriver *payPalDriver = [[BTPayPalDriver alloc] initWithAPIClient:self.braintreeClient];
+	payPalDriver.viewControllerPresentingDelegate = self;
+	[payPalDriver authorizeAccountWithAdditionalScopes:[NSSet setWithArray:@[@"email", @"address"]]
+						completion:^(BTPayPalAccountNonce * _Nullable tokenizedPayPalAccount, NSError * _Nullable   error) {
+	    NSArray *args = @[];
+	    if (tokenizedPayPalAccount) {
+            BTPostalAddress *address = tokenizedPayPalAccount.shippingAddress ?: tokenizedPayPalAccount.billingAddress;
+            NSMutableDictionary *dicAddress = [NSMutableDictionary
+						  dictionaryWithDictionary: @{}];
+            if (address.streetAddress) {
+                [dicAddress setObject:address.streetAddress forKey:@"street-address"];
+            }
+            if (address.locality) {
+                [dicAddress setObject:address.locality forKey:@"locality"];
+            }
+            if (address.countryCodeAlpha2) {
+                [dicAddress setObject:address.countryCodeAlpha2 forKey:@"country-code-alpha-2"];
+            }
+            if (address.recipientName) {
+                [dicAddress setObject:address.recipientName forKey:@"recipient-name"];
+            }
+            if (address.extendedAddress) {
+                [dicAddress setObject:address.extendedAddress forKey:@"extended-address"];
+            }
+            if (address.postalCode) {
+                [dicAddress setObject:address.postalCode forKey:@"postal-code"];
+            }
+            if (address.region) {
+                [dicAddress setObject:address.region forKey:@"region"];
+            }
+            args = @[[NSNull null], @{@"status": @"ok",
+                                      @"nonce": tokenizedPayPalAccount.nonce,
+                                      @"email": tokenizedPayPalAccount.email,
+                                      @"address": dicAddress}];
+        } else if (error) {
+            args = @[error.localizedDescription, [NSNull null]];
+        } else {
+            args = @[[NSNull null], @{@"status": @"cancelled"}];
+	    }
+	    callback(args);
+	  }];
+    });
+}
+
+RCT_EXPORT_METHOD(showBillingAgreementViewController:(RCTResponseSenderBlock)callback)
+{
+  dispatch_async(dispatch_get_main_queue(), ^{
+      BTPayPalDriver *payPalDriver = [[BTPayPalDriver alloc] initWithAPIClient:self.braintreeClient];
+      payPalDriver.viewControllerPresentingDelegate = self;
+      BTPayPalRequest *checkout = [[BTPayPalRequest alloc] init];
+      checkout.billingAgreementDescription = @"Your agreement description";
+      [payPalDriver authorizeAccountWithCompletion:^(BTPayPalAccountNonce *tokenizedPayPalAccount, NSError *error) {
+	  NSArray *args = @[];
+	  if ( error == nil ) {
+	    args = @[[NSNull null], tokenizedPayPalAccount.nonce];
+	  } else {
+	    args = @[error.description, [NSNull null]];
+	  }
+	  callback(args);
+	}];
+    });
+}
+
+RCT_EXPORT_METHOD(getPayPalClientMetadataId:(RCTResponseSenderBlock)callback)
+{
+    callback(@[[NSNull null], [PPDataCollector clientMetadataID]]);
+}
+
 RCT_EXPORT_METHOD(getCardNonce: (NSString *)cardNumber
                   expirationMonth: (NSString *)expirationMonth
                   expirationYear: (NSString *)expirationYear
@@ -84,7 +177,7 @@ RCT_EXPORT_METHOD(getCardNonce: (NSString *)cardNumber
 {
     BTCardClient *cardClient = [[BTCardClient alloc] initWithAPIClient: self.braintreeClient];
     BTCard *card = [[BTCard alloc] initWithNumber:cardNumber expirationMonth:expirationMonth expirationYear:expirationYear cvv:nil];
-    
+
     [cardClient tokenizeCard:card
                   completion:^(BTCardNonce *tokenizedCard, NSError *error) {
 
@@ -99,8 +192,12 @@ RCT_EXPORT_METHOD(getCardNonce: (NSString *)cardNumber
      ];
 }
 
++ (BOOL)requiresMainQueueSetup
+{
+  return YES;
+}
+
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    
     if ([url.scheme localizedCaseInsensitiveCompare:URLScheme] == NSOrderedSame) {
         return [BTAppSwitch handleOpenURL:url sourceApplication:sourceApplication];
     }
@@ -127,7 +224,6 @@ RCT_EXPORT_METHOD(getCardNonce: (NSString *)cardNumber
 }
 
 - (void)dropInViewController:(BTDropInViewController *)viewController didSucceedWithTokenization:(BTPaymentMethodNonce *)paymentMethodNonce {
-    
     self.callback(@[[NSNull null],paymentMethodNonce.nonce]);
     [viewController dismissViewControllerAnimated:YES completion:nil];
 }
